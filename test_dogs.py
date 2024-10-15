@@ -29,13 +29,13 @@ class YaUploader:
         url_create = f'{self.base_url.BASE_URL_YANDEX}/v1/disk/resources'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': self.token}
-        return requests.delete(f'{url_create}?path=/test_folder', headers=headers)
+        return requests.get(f'{url_create}?path=/test_folder', headers=headers)
 
     def delete_folder(self, path):
         url = f'{self.base_url.BASE_URL_YANDEX}/v1/disk/resources'
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json',
                    'Authorization': self.token}
-        requests.get(f'{url}?path=/{path}', headers=headers)
+        requests.delete(f'{url}?path=/{path}', headers=headers)
 
 
 base_url = URL()
